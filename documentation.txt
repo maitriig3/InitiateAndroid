@@ -1,0 +1,47 @@
+connectivityManager.withLiveData
+
+-> (Add lifecycle)
+-> ConnectivityRepository has to be injected into a ViewModel, where liveData has to be defined
+-> Use Live template 'connParameter' to define ConnectivityRepository parameter in view model constructor
+-> Use Live template 'isInternetConnectedDeclare' to declare live data in view model
+-> Use Live template 'isInternetConnectedSelect' to observe network updates for the whole lifecycle
+-> Use Live template 'isInternetConnectedTimesSelect' to observe network updates for the number of times specified
+
+
+(dagger.hilt)
+
+-> Add dependency from InitiateDependency (com.mai3.initiateDependency.DaggerHilt)
+-> If kapt is used, then configure it to correct error types
+-> To add Hilt Plugin(There is error),
+    -> Get Classpath from classpathForPlugin(version)
+    -> Get Plugin id from constant HILT_PLUGIN_ID
+    -> Get version from version constants
+-> Use the file template 'InitiateDaggerHilt' to create files
+    -> A Module class
+        -> To create empty class, do not add 'true' to any parameter
+        -> If 'InitiateRetrofit' has already been called, then 'true' to InitiateRetrofit parameter to add code for retrofit builder and network repository
+
+
+
+network.retrofit
+
+-> Add retrofit dependencies
+-> Create all files using file template 'InitiateRetrofit', which creates files required to implement Retrofit
+    -> An object 'EndPoints.kt' in which data regarding API endpoints is added
+    -> A sample request in package 'request'
+    -> A sample response in package 'response'
+    -> An interface 'ApiFunctions' which contains one sample POST request and response captured as NetworkData<ResponseSample>
+    -> A 'NetworkRepository' where functions from ApiFunctions are called and parsed using 'parseResult(...)' function to get NetworkResult.Success or NetworkResult.Error
+-> Define retrofit builder by calling 'InitializeRetrofit.retrofitBuilder(...)' function, parameters include
+    -> baseUrl : Base Url of Api
+    -> classInterface : Interface class which contains different request functions
+    -> successConstant: Verified after getting result with NetworkData.result to know success response in 'parseResponse()' function. Default value is 1.
+    -> failureConstant: Verified after getting result with NetworkData.result to know failure response in 'parseResponse()' function. Default value is 0.,
+    -> interceptor: Interceptor to be added to Okhttp Client. Default is HttpLoggingInterceptor with level BODY
+    -> okHttpClient: OkHttpClient to be added to Retrofit Builder. Default is OkHttpClient with HttpLoggingInterceptor, 60 seconds read and connect timeout.
+    -> setLenientGson: If 'setLenient()' has to be called on GsonBuilder for GsonConverterFactory. Default is true
+-> To initialize retrofitBuilder and NetworkRepository in a dagger-hilt module class
+    -> If module class is already defined, then call live template 'InitiateRetrofitInDaggerHilt'
+    -> If not, follow the steps in (dagger.hilt) and 'true' to InitiateRetrofit
+
+

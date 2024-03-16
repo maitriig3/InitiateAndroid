@@ -1,0 +1,13 @@
+^^ - To Do
+^!^ - Test it
+^_^ - Completed
+
+13-03-24
+^_^ - Add code for hilt plugin too
+^^ - Test Initiate Dependency
+^^ - Try the same in groovy
+
+15-03-24
+^^ - Not able to run code from plugin in root level build.gradle and also in plugin{} in app level build.gradle
+^^ - InitiateRetrofitInDaggerHilt. get package name directly in live data
+^^ - InitiateDaggerHilt file template, creation of application class and also adding livedata in that
