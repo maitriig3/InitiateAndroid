@@ -1,6 +1,6 @@
-import com.mai3.initiateDependency.Lifecycle
-import com.mai3.initiateDependency.Retrofit
-import com.mai3.initiateDependency.Okhttp
+import `in`.mai3.initiateDependency.Lifecycle
+import `in`.mai3.initiateDependency.Retrofit
+import `in`.mai3.initiateDependency.Okhttp
 
 plugins {
     id("com.android.library")
@@ -9,7 +9,7 @@ plugins {
 }
 
 android {
-    namespace = "com.mai3.initiateandroid"
+    namespace = "in.mai3.initiateandroid"
     compileSdk = 34
 
     defaultConfig {

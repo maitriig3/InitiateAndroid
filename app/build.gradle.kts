@@ -1,5 +1,5 @@
-import com.mai3.initiateDependency.DaggerHilt
-import com.mai3.initiateDependency.DaggerHilt.Companion.HILT_PLUGIN_ID
+import `in`.mai3.initiateDependency.DaggerHilt
+import `in`.mai3.initiateDependency.DaggerHilt.Companion.HILT_PLUGIN_ID
 
 
 plugins {
@@ -13,11 +13,11 @@ plugins {
 
 
 android {
-    namespace = "com.mai3.initiateandroidsample"
+    namespace = "in.mai3.initiateandroidsample"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.mai3.initiateandroidsample"
+        applicationId = "in.mai3.initiateandroidsample"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -67,5 +67,7 @@ dependencies {
     implementation(project(":InitiateAndroid"))
 
 }
+
+kapt { correctErrorTypes = true }
 
 

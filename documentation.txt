@@ -10,7 +10,7 @@ connectivityManager.withLiveData
 
 (dagger.hilt)
 
--> Add dependency from InitiateDependency (com.mai3.initiateDependency.DaggerHilt)
+-> Add dependency from InitiateDependency (`in`.mai3.initiateDependency.DaggerHilt)
 -> If kapt is used, then configure it to correct error types
 -> To add Hilt Plugin(There is error),
     -> Get Classpath from classpathForPlugin(version)
