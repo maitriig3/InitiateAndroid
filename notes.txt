@@ -9,5 +9,25 @@
 
 15-03-24
 ^^ - Not able to run code from plugin in root level build.gradle and also in plugin{} in app level build.gradle
-^^ - InitiateRetrofitInDaggerHilt. get package name directly in live data
-^^ - InitiateDaggerHilt file template, creation of application class and also adding livedata in that
+^^ - InitiateRetrofitInDaggerHilt get package name directly in live template
+^^ - InitiateDaggerHilt file template, creation of application class and also add live template in that
+
+16-03-24
+^^ - Write Readme for this and templates
+
+19-03-24
+^^ - Connectivity and Fragment
+Things to add in Readme.md
+^^ - Setup with photo
+^^ - Initiate Dagger Hilt (Steps added in documentation.txt)
+^^ - Initiate Retrofit (Steps added in documentation.txt)
+^^ - Contributions
+^^ - Issues and Discussions
+^^ - License
+
+Things to add in wiki
+^^ - Documentation about DaggerHilt and Retrofit class
+
+
+20-03-24
+^^ - Integrate these https://medium.com/@iateyourmic/ensuring-code-quality-on-android-d583e717de2
