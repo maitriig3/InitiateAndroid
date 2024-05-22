@@ -1,6 +1,5 @@
-import `in`.mai3.initiateDependency.DaggerHilt
-import `in`.mai3.initiateDependency.DaggerHilt.Companion.HILT_PLUGIN_ID
-
+import in_.mai3.initiateDependency.DaggerHilt
+import in_.mai3.initiateDependency.RoomDatabase
 
 plugins {
     id("com.android.application")
@@ -10,14 +9,12 @@ plugins {
     id("com.google.dagger.hilt.android")
 }
 
-
-
 android {
-    namespace = "in.mai3.initiateandroidsample"
+    namespace = "in_.mai3.initiateandroidsample"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "in.mai3.initiateandroidsample"
+        applicationId = "in_.mai3.initiateandroidsample"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -61,7 +58,11 @@ dependencies {
 
 
     DaggerHilt(this)
-        .implementationWithKapt()
+        .basicRequired()
+
+    RoomDatabase(this)
+        .basicRequired()
+
 
 
     implementation(project(":InitiateAndroid"))

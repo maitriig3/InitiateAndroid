@@ -31,3 +31,12 @@ Things to add in wiki
 
 20-03-24
 ^^ - Integrate these https://medium.com/@iateyourmic/ensuring-code-quality-on-android-d583e717de2
+
+31-03-24
+^_^ - Changed package name to in_
+
+07-04-24
+^^ - Unknown host exception when internet is not connected, how to catch it
+
+14-04-24
+^^ - Encrypted Shared Preferences

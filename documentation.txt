@@ -1,3 +1,8 @@
+Module import
+-> When module is imported using ide, a groovy settings.gradle is added to include module
+-> Add include in settings.gradle.kts and delete that file
+
+
 connectivityManager.withLiveData
 
 -> (Add lifecycle)
@@ -16,17 +21,19 @@ connectivityManager.withLiveData
     -> Get Classpath from classpathForPlugin(version)
     -> Get Plugin id from constant HILT_PLUGIN_ID
     -> Get version from version constants
--> Use the file template 'InitiateDaggerHilt' to create files
+-> Use the file template 'InitiateDaggerHilt' to create files (call from base package)
     -> A Module class
         -> To create empty class, do not add 'true' to any parameter
-        -> If 'InitiateRetrofit' has already been called, then 'true' to InitiateRetrofit parameter to add code for retrofit builder and network repository
+        -> If 'InitiateRetrofit' has already been called, then add 'true' to 'Initiate Retrofit' parameter to add code for retrofit builder and network repository
+        -> If 'InitiateRoomDatabase' has already been called, then add 'true' to 'Initiate Room Database' parameter to add code for database builder
+        -> If 'InitiateSharedPreferences' has already been called, then add 'true' to 'Initiate Shared Preferences' parameter to add code for shared preferences, editor and repository
 
 
 
 network.retrofit
 
 -> Add retrofit dependencies
--> Create all files using file template 'InitiateRetrofit', which creates files required to implement Retrofit
+-> Create all files using file template 'InitiateRetrofit', which creates files required to implement Retrofit in 'data/remote'(call from base package)
     -> An object 'EndPoints.kt' in which data regarding API endpoints is added
     -> A sample request in package 'request'
     -> A sample response in package 'response'
@@ -41,7 +48,22 @@ network.retrofit
     -> okHttpClient: OkHttpClient to be added to Retrofit Builder. Default is OkHttpClient with HttpLoggingInterceptor, 60 seconds read and connect timeout.
     -> setLenientGson: If 'setLenient()' has to be called on GsonBuilder for GsonConverterFactory. Default is true
 -> To initialize retrofitBuilder and NetworkRepository in a dagger-hilt module class
-    -> If module class is already defined, then call live template 'InitiateRetrofitInDaggerHilt'
-    -> If not, follow the steps in (dagger.hilt) and 'true' to InitiateRetrofit
+    -> If module class is already defined, then call live template 'initiateRetrofitInDaggerHilt'
+    -> If not, follow the steps in (dagger.hilt) and 'true' to 'Initiate Retrofit'
 
+viewBindingFragment
+-> Enable view binding in build.gradle or build.gradle.kts
+-> Create layout file for fragment
 
+(room.database)
+-> Add dependency from InitiateDependency (`in`.mai3.initiateDependency.RoomDatabase)
+-> Use file template 'InitiateRoomDatabase' to get a sample table and AppDatabase in package 'data/local/room' (call from base package)
+-> To initialize Room Database builder in a dagger-hilt module class
+    -> If module class is already defined, then call live template 'initiateRoomDatabaseInDaggerHilt'
+    -> If not, follow the steps in (dagger.hilt) and 'true' to 'Initiate Room Database'
+
+(shared.preferences)
+-> Use file template 'InitiateSharedPreferences' to get an object class and repositories in package 'data/local/preferences' (call from base package)
+-> To initialize shared preferences, editor and repository in a dagger-hilt module class
+    -> If module class is already defined, then call live template 'initiateSharedPreferencesInDaggerHilt'
+    -> If not, follow the steps in (dagger.hilt) and 'true' to 'Initiate Shared Preferences'

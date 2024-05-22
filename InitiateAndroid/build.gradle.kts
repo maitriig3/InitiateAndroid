@@ -1,6 +1,7 @@
-import `in`.mai3.initiateDependency.Lifecycle
-import `in`.mai3.initiateDependency.Retrofit
-import `in`.mai3.initiateDependency.Okhttp
+import in_.mai3.initiateDependency.Lifecycle
+import in_.mai3.initiateDependency.Retrofit
+import in_.mai3.initiateDependency.Okhttp
+import in_.mai3.initiateDependency.Navigation
 
 plugins {
     id("com.android.library")
@@ -9,7 +10,7 @@ plugins {
 }
 
 android {
-    namespace = "in.mai3.initiateandroid"
+    namespace = "in_.mai3.initiateandroid"
     compileSdk = 34
 
     defaultConfig {
@@ -35,6 +36,9 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+    buildFeatures{
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -53,10 +57,12 @@ dependencies {
 
     //network.retrofit
     Retrofit(this)
-        .implementationRetrofitWithGsonConverter()
+        .basicRequired()
 
     Okhttp(this)
-        .implementationBom()
-        .implementationOkhttpWithLoggingInterceptor()
+        .basicRequired()
+
+    Navigation(this)
+        .basicRequired()
 
 }
