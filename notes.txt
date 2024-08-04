@@ -40,3 +40,10 @@ Things to add in wiki
 
 14-04-24
 ^^ - Encrypted Shared Preferences
+
+03-08-24
+^_^ - Update ReadMe
+^^ - Look into publishing library (Releases and Packages)
+^^ - Add samples in app module
+^_^ - Add all steps, along with live and file template steps and InitiateDependency steps, in Initiate Android Readme
+^^ - Add all functions available for InitiateDependency

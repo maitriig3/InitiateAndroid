@@ -7,6 +7,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import in_.mai3.initiateandroid.connectivityManager.withLiveData.ConnectivityRepository
 import in_.mai3.initiateandroid.network.retrofit.InitializeRetrofit
 import in_.mai3.initiateandroidsample.data.local.preferences.PreferencesRepository
 import in_.mai3.initiateandroidsample.data.local.preferences.PreferencesRepositoryImpl
@@ -53,6 +54,12 @@ class AppModule {
     @Singleton
     fun providesPreferenceRepository(sharedPreferences: SharedPreferences,editor: SharedPreferences.Editor): PreferencesRepository {
         return PreferencesRepositoryImpl(sharedPreferences, editor)
+    }
+
+    @Provides
+    @Singleton
+    fun providesConnectivityRepository(context: Application): ConnectivityRepository{
+        return ConnectivityRepository(context)
     }
 
 }

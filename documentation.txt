@@ -2,8 +2,13 @@ Module import
 -> When module is imported using ide, a groovy settings.gradle is added to include module
 -> Add include in settings.gradle.kts and delete that file
 
+Before committing:
+-> Replace InitiateDependency.jar
 
-connectivityManager.withLiveData
+^^ - Yet to add in ReadMe
+^_^ - Added in ReadMe
+
+^_^ connectivityManager.withLiveData
 
 -> (Add lifecycle)
 -> ConnectivityRepository has to be injected into a ViewModel, where liveData has to be defined
@@ -13,7 +18,7 @@ connectivityManager.withLiveData
 -> Use Live template 'isInternetConnectedTimesSelect' to observe network updates for the number of times specified
 
 
-(dagger.hilt)
+^_^ (dagger.hilt)
 
 -> Add dependency from InitiateDependency (`in`.mai3.initiateDependency.DaggerHilt)
 -> If kapt is used, then configure it to correct error types
@@ -30,7 +35,7 @@ connectivityManager.withLiveData
 
 
 
-network.retrofit
+^_^ network.retrofit
 
 -> Add retrofit dependencies
 -> Create all files using file template 'InitiateRetrofit', which creates files required to implement Retrofit in 'data/remote'(call from base package)
@@ -51,19 +56,20 @@ network.retrofit
     -> If module class is already defined, then call live template 'initiateRetrofitInDaggerHilt'
     -> If not, follow the steps in (dagger.hilt) and 'true' to 'Initiate Retrofit'
 
-viewBindingFragment
+^_^ viewBindingFragment
 -> Enable view binding in build.gradle or build.gradle.kts
 -> Create layout file for fragment
 
-(room.database)
+^_^ (room.database)
 -> Add dependency from InitiateDependency (`in`.mai3.initiateDependency.RoomDatabase)
 -> Use file template 'InitiateRoomDatabase' to get a sample table and AppDatabase in package 'data/local/room' (call from base package)
 -> To initialize Room Database builder in a dagger-hilt module class
     -> If module class is already defined, then call live template 'initiateRoomDatabaseInDaggerHilt'
     -> If not, follow the steps in (dagger.hilt) and 'true' to 'Initiate Room Database'
 
-(shared.preferences)
+^_^ (shared.preferences)
 -> Use file template 'InitiateSharedPreferences' to get an object class and repositories in package 'data/local/preferences' (call from base package)
 -> To initialize shared preferences, editor and repository in a dagger-hilt module class
     -> If module class is already defined, then call live template 'initiateSharedPreferencesInDaggerHilt'
     -> If not, follow the steps in (dagger.hilt) and 'true' to 'Initiate Shared Preferences'
+
