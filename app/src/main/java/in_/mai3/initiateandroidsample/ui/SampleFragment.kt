@@ -11,6 +11,8 @@ class SampleFragment : ViewBindingFragment<FragmentSampleBinding>(FragmentSample
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
+
     }
 
 }
